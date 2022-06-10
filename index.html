@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<link rel="stylesheet" href="./css/style.css">
+<body>
+  <p>Our Menu</p>
+  <p id="ingredients"></p>
+  <p id="userSelection"></p>
+  <p id="menuItems"></p>
+  <!-- <input type="text" id="menuField" class="menuField"> -->
+  
+  <select name="menuField" class="menuSubmit">
+    <option value="Banku_with_hot_pepper">Banku_with_hot_pepper</option>
+    <option value="Beef_stew_with_rice">Beef_stew_with_rice</option>
+    <option value="Tilapia_light_soup_with_fufu">Tilapia_light_soup_with_fufu</option>
+    <option value="Salad">Salad</option>
+  </select>
+  <input type="submit" value="submit" class="menuSubmit">
+
+  <script>
+   let item1 = "Banku_with_hot_pepper";
+   let item2 = "Beef_stew_with_rice";
+   let item3 = "Tilapia_light_soup_with_fufu";
+   let item4 = "Salad";
+   let ing1 = "corn dough, cassava dough, tomatoes, ginger, kpakposhitor, salt, fried fish, onion";
+   let ing2 = "beef, rice, oil, salt, fresh tomatoes, onion, powdered pepper, kpakposhitor, tomato paste, ginger, garlic, selim, seasoning";
+   let ing3 = "cassava, unripe plantain, fresh tilapia, pepper, ginger, garlic, tomatoes, tomato paste, salt, seasoning, onion, selim";
+   let ing4 = "lettuce, cabbage, carrot, beetroot, baked beans, onion, mayonnaise, egg, green pepper, fresh tomatoes";
+   
+   document.getElementById("menuItems").innerHTML = " 1. " + item1 + " 2. " + item2 + " 3.  "  +  item3 + " 4.  " + item4; 
+
+   const menuSubmit = document.querySelector(".menuSubmit");
+   const menuField = document.querySelector(".menuField");
+   function checkMenu(){
+     const menuValue = (menuField.value)
+
+     if(menuValue =="Banku_with_hot_pepper"){
+       document.getElementById("userSelection").innerHTML = "You have selected " + item1;
+       document.getElementById("ingredients").innerHTML = "The ingredients are: " + ing1;
+     }
+
+     else if(menuValue =="Beef_stew_with_rice"){
+       document.getElementById("userSelection").innerHTML = "You have selected " + item2;
+       document.getElementById("ingredients").innerHTML = "The ingredients are: " + ing2;
+     }
+
+     else if(menuValue =="Tilapia_light_soup_with_fufu"){
+       document.getElementById("userSelection").innerHTML = "You have selected " + item3;
+       document.getElementById("ingredients").innerHTML = "The ingredients are:  " + ing3;
+     }
+
+     else if(menuValue =="Salad"){
+       document.getElementById("userSelection").innerHTML = "You have selected " + item4;
+       document.getElementById("ingredients").innerHTML = "The ingredients are: " + ing4;
+     }
+
+     else {
+       document.write("You have not selected any food");
+     }
+   }
+
+   menuSubmit.addEventListener("click", checkMenu);
+  </script>
+  </body>
+</html>
+ 
